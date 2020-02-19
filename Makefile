@@ -35,3 +35,6 @@ open:
 
 diff:
 	vimdiff autoexec.cfg "$(AUTOEXEC_DST)"
+
+build-for-cmd:
+	awk -F '//' '{print $1}' autoexec.cfg | sed '/^$/d' | sed -z 's/\n/;/g'
