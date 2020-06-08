@@ -38,3 +38,7 @@ diff:
 
 build-for-cmd:
 	awk -F '//' '{print $1}' autoexec.cfg | sed '/^$/d' | sed -z 's/\n/;/g'
+
+notes:
+	((^\w+)(\s"?\w+"?)?)
+	gawk 'match($0, ((^\w+)(\s"?\w+"?)?), ary) {print ary[1]}'
